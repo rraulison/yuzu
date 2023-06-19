@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=yuzu
+Comment=Open the latest .AppImage file in ${HOME}/Downloads/
+Exec=bash -c "${HOME}/check.sh" && bash -c 'latest_appimage=$(ls -t ${HOME}/Downloads/*.AppImage | sort -rn | head -1); if [[ -f "$latest_appimage" ]]; then chmod +x "$latest_appimage"; nohup "$latest_appimage" >/dev/null 2>&1 & else echo "No .AppImage file found."; fi'
+
+Icon=${HOME}/Imagens/Yuzu_Emulator.svg
+Terminal=false
+Categories=Utility;
